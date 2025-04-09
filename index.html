@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>প্রিমিয়াম বাংলা মুভি | HD ডাউনলোড</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #e94560;
+            --secondary: #1a1a2e;
+            --accent: #0f3460;
+            --light: #f5f5f5;
+            --dark: #16213e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--secondary);
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* হেডার স্টাইল */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 25px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            color: var(--primary);
+            margin-right: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 50%;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #ffd700;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* হিরো সেকশন */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://i.ibb.co/NnW3cY50/download-2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(233, 69, 96, 0.6);
+            background: #d23352;
+        }
+        
+        /* মুভি গ্যালারী */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .movie-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .movie-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .movie-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .movie-poster {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .movie-card:hover .movie-poster {
+            transform: scale(1.05);
+        }
+        
+        .movie-info {
+            padding: 20px;
+            position: relative;
+        }
+        
+        .movie-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .movie-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        
+        .download-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: var(--secondary);
+        }
+        
+        .quality-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        /* ফুটার */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* রেস্পন্সিভ ডিজাইন */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero {
+                height: 50vh;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 40vh;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .movie-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- হেডার সেকশন -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-film"></i>
+                <span>বাংলা মুভিজ</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">হোম</a></li>
+                    <li><a href="#">মুভি</a></li>
+                    <li><a href="#">সিরিজ</a></li>
+                    <li><a href="#">আমাদের সম্পর্কে</a></li>
+                    <li><a href="#">যোগাযোগ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- হিরো সেকশন -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>২০২৫ সালের সেরা বাংলা মুভি</h1>
+            <p>এক ক্লিকেই ডাউনলোড করুন সর্বশেষ হিট বাংলা চলচ্চিত্র। HD কোয়ালিটিতে শুধুমাত্র বাংলা মুভিজে।</p>
+            <a href="#" class="btn">সব মুভি দেখুন</a>
+        </div>
+    </section>
+    
+    <!-- মুভি গ্যালারী -->
+    <section class="container">
+        <div class="section-title">
+            <h2>নতুন মুক্তিপ্রাপ্ত মুভি</h2>
+        </div>
+        
+        <div class="movie-gallery">
+            <!-- মুভি ১ -->
+            <div class="movie-card">
+                <span class="quality-badge">HD 1080p</span>
+                <img src="https://i.ibb.co/NnW3cY50/download-2.jpg" alt="তুফান মুভি পোস��টার" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">তুফান</h3>
+                    <div class="movie-meta">
+                        <span>2025</span>
+                        <span class="rating">★ 8.5/10</span>
+                    </div>
+                    <a href="https://geometrydoomeddrone.com/jv3e105eq?key=12a77d608d36577c68418db5cb428bf5" class="download-btn" target="_blank">
+                        <i class="fas fa-download"></i> ডাউনলোড
+                    </a>
+                </div>
+            </div>
+            
+            <!-- মুভি ২ -->
+            <div class="movie-card">
+                <span class="quality-badge">HD 720p</span>
+                <img src="https://i.ibb.co.com/Ldh33rfx/download-1.jpg" alt="বরবাদ মুভি পোস্টার" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">বরবাদ</h3>
+                    <div class="movie-meta">
+                        <span>2025</span>
+                        <span class="rating">★ 8.2/10</span>
+                    </div>
+                    <a href="https://geometrydoomeddrone.com/jv3e105eq?key=12a77d608d36577c68418db5cb428bf5" class="download-btn" target="_blank">
+                        <i class="fas fa-download"></i> ডাউনলোড
+                    </a>
+                </div>
+            </div>
+            
+            <!-- মুভি ৩ -->
+            <div class="movie-card">
+                <span class="quality-badge">Full HD</span>
+                <img src="https://i.ibb.co/dJBdRGs4/download-3.jpg" alt="দাগি মুভি পোস্টার" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">দাগি</h3>
+                    <div class="movie-meta">
+                        <span>2025</span>
+                        <span class="rating">★ 9.0/10</span>
+                    </div>
+                    <a href="https://geometrydoomeddrone.com/jv3e105eq?key=12a77d608d36577c68418db5cb428bf5" class="download-btn" target="_blank">
+                        <i class="fas fa-download"></i> ডাউনলোড
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ফুটার -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>বাংলা মুভিজ</h3>
+                    <p>বাংলাদেশের সেরা চলচ্চিত্র সংগ্রহশালা। HD কোয়ালিটিতে শুধুমাত্র আমাদের সাথে।</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>লিংক</h3>
+                    <ul>
+                        <li><a href="#">হোম</a></li>
+                        <li><a href="#">মুভি</a></li>
+                        <li><a href="#">সিরিজ</a></li>
+                        <li><a href="#">সর্বশেষ মুক্তি</a></li>
+                        <li><a href="#">আপকামিং মুভি</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>ক্যাটাগরি</h3>
+                    <ul>
+                        <li><a href="#">অ্যাকশন</a></li>
+                        <li><a href="#">থ্রিলার</a></li>
+                        <li><a href="#">রোমান্টিক</a></li>
+                        <li><a href="#">কমেডি</a></li>
+                        <li><a href="#">ড্রামা</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>যোগাযোগ</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> contact@banglamovies.com</li>
+                        <li><i class="fas fa-phone"></i>  ফুচক</li>
+                        <li><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 বাংলা মুভিজ. সকল স্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ডাউনলোড বাটনে ক্লিক ইভেন্ট
+        document.querySelectorAll('.download-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if(this.href.includes('geometrydoomeddrone.com')) {
+                    e.preventDefault();
+                    const movieTitle = this.closest('.movie-card').querySelector('.movie-title').textContent;
+                    alert(movieTitle + https://geometrydoomeddrone.com/jv3e105eq?key=12a77d608d36577c68418db5cb428bf5" class="download-btn" target="_blank">।");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
